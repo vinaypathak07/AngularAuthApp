@@ -1,0 +1,33 @@
+.footer-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    bottom: 0;
+    background-color: #111415;
+    width: 100vw;
+    color: antiquewhite;
+    font-size: 18px;
+  }
+  .stay-connected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+  }
+  .icons-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4px;
+  }
+  .icons {
+    height: 30px;
+    width: 30px;
+  }
+  .handles{
+      padding : 10px;
+  }
+  .mat-button{
+      padding:4px;
+      min-width:0;
+  }
+  
