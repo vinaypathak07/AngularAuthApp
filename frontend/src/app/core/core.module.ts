@@ -9,6 +9,7 @@ import { LoginComponent } from '../login/login.component';
 import { SpecialEventsComponent } from '../special-events/special-events.component';
 import { RegisterComponent } from '../register/register.component';
 import { EventsComponent } from '../events/events.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { EventsComponent } from '../events/events.component';
   ],
   imports: [
     MaterialModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CoreComponent,
