@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-events',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
+  events = [];
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
+    this.eventService.getEvents()
+      .subscribe(
+        (response) => {
+          console.log(response);
+          this.events = response;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
+  onClick(index) {
+    console.log('You clicked on ticket:', index + 1);
   }
 
 }

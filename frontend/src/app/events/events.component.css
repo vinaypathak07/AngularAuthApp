@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+.card-container{
+    min-height:calc(100vh - 155px);
+    display:grid;
+    grid-template-columns:3fr 3fr 3fr;
+}
+
+.mat-card-header{
+    justify-content: center;
+}
+
+.mat-card-title,.mat-card-content,.mat-flat-button{
+    font-family: "Inconsolata", monospace;
+}
+.mat-card-title{
+    font-weight: bold;
+}
+.mat-flat-button{
+    color:white;
+    background:royalblue
+}
+
+.event-card{
+    padding:20px;
+}

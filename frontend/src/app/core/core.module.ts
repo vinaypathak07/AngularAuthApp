@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MaterialModule } from '../material/material.module';
 import { CoreRoutingModule } from './core.routing.module';
@@ -10,6 +11,7 @@ import { SpecialEventsComponent } from '../special-events/special-events.compone
 import { RegisterComponent } from '../register/register.component';
 import { EventsComponent } from '../events/events.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     CoreRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule
   ],
   exports: [
     CoreComponent,

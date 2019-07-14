@@ -1,28 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
-.card-container{
-    height: calc(100vh - 155px);
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.card-container {
+  min-height: calc(100vh - 155px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-div.mat-card-header-text{
-    margin:0px;
+div.mat-card-header-text {
+  margin: 0px;
 }
-.mat-card{
-   padding:40px;
+.mat-card {
+  padding: 40px;
 }
-.mat-card-content{
-    margin:0 16px;
-    margin-top:25px;
+.mat-card-content {
+  margin: 0 16px;
+  margin-top: 25px;
 }
-.mat-form-field{
-    width:18em;
-    padding:0px;
+.mat-form-field {
+  width: 18em;
+  padding: 0px;
 }
-.mat-flat-button{
-    font-family:'Inconsolata', monospace;
-    font-size:14px;
-    font-weight:bold;
-    color:white;
-    background: black
+.mat-flat-button {
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background: black;
 }

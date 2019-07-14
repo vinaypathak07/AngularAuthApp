@@ -12,13 +12,14 @@
       </div>
       <mat-card-content>
         <div class="registration-form">
-          <form [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
             <div>
               <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input
                   matInput
                   placeholder="Enter email"
+                  type="email"
                   formControlName="email"
                 />
               </mat-form-field>
@@ -29,6 +30,7 @@
                 <input
                   matInput
                   placeholder="Enter password"
+                  type="password"
                   formControlName="password"
                 />
               </mat-form-field>
@@ -37,6 +39,7 @@
               <button
                 mat-flat-button
                 type="submit"
+                [disabled]="!(registrationForm.valid)"
               >
                 Register
               </button>
