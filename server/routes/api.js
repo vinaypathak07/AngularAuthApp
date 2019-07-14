@@ -13,6 +13,23 @@ mongoose.connect(db, { useNewUrlParser: true }, err => {
     }
 })
 
+function verifyToken(req, res, next) {
+  if(!req.headers.authorization) {
+    return res.status(401).send('Unauthorized Request')
+  }
+  let token = req.headers.authorization.split(' ')[1]
+  if (token === 'null') {
+    return res.status(401).send('Unauthorized Request')
+  }
+  //verify method returns the decoded token if it is valid.If token is invalid-> there is no payload
+  let payload = jwt.verify(token, 'secretKey')
+  if(!payload) {
+    return res.status(401).send('Unauthorized Request')
+  }
+  req.userId = payload.subject;
+  next();
+}
+
 router.get('/',(req,res) => {
     res.send('From Api Route');
 })
@@ -99,7 +116,7 @@ router.get('/events', (req, res) => {
     res.json(events)
 })
 
-router.get('/special', (req, res) => {
+router.get('/special', verifyToken, (req, res) => {
     let events = [
        { "_id": "1",
          "name": "Auto Expo",
