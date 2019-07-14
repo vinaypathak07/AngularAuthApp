@@ -11,11 +11,14 @@
         <a style="font-family:'Inconsolata', monospace;font-size:18px" mat-button routerLink='/special'>Members</a>
     </div>
     <div class="access-buttons">
-        <div class="nav-buttons">
+        <div *ngIf="!(authService.loggedIn())" class="nav-buttons">
             <a style="font-family:'Inconsolata', monospace;font-size:18px" mat-button routerLink='/login'>Login</a>
         </div>
-        <div class="nav-buttons">
+        <div *ngIf="!(authService.loggedIn())" class="nav-buttons">
             <a style="font-family:'Inconsolata', monospace;font-size:18px" mat-button routerLink='/register'>Register</a>
+        </div>
+        <div *ngIf="authService.loggedIn()" class="nav-buttons">
+            <a style="font-family:'Inconsolata', monospace;font-size:18px" mat-button routerLink='/register' (click)="authService.logOut()">Logout</a>
         </div>
     </div>
 </mat-toolbar>
