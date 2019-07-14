@@ -12,6 +12,7 @@ import { RegisterComponent } from '../register/register.component';
 import { EventsComponent } from '../events/events.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from '../auth.guard';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     CoreComponent,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
