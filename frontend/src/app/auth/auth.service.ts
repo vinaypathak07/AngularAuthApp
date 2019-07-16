@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
 
-    private _registerUrl = 'http://localhost:3000/api/register';
-    private _loginUrl = 'http://localhost:3000/api/login';
+    private _registerUrl = 'http://localhost:8080/api/register';
+    private _loginUrl =   'http://localhost:8080/api/login';
     constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {}
 
     registerUser(user) {
